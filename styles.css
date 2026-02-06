@@ -17,7 +17,7 @@
 
 body {
   font-family: "Inter", sans-serif;
-  background: var(--paper);
+  background: radial-gradient(circle at top, #fffaf3 0%, var(--paper) 55%, #f0e8dc 100%);
   color: var(--ink);
   line-height: 1.6;
   min-height: 100vh;
@@ -28,11 +28,15 @@ body {
 .paper-texture {
   position: fixed;
   inset: 0;
-  background-image: radial-gradient(rgba(0, 0, 0, 0.05) 1px, transparent 0),
-    radial-gradient(rgba(0, 0, 0, 0.04) 1px, transparent 0);
-  background-size: 18px 18px, 24px 24px;
-  background-position: 0 0, 6px 8px;
-  opacity: 0.2;
+  background-image:
+    radial-gradient(rgba(0, 0, 0, 0.09) 1px, transparent 0),
+    radial-gradient(rgba(0, 0, 0, 0.06) 1px, transparent 0),
+    repeating-linear-gradient(0deg, rgba(0, 0, 0, 0.035), rgba(0, 0, 0, 0.035) 1px, transparent 1px, transparent 6px),
+    repeating-linear-gradient(90deg, rgba(0, 0, 0, 0.02), rgba(0, 0, 0, 0.02) 1px, transparent 1px, transparent 8px);
+  background-size: 16px 16px, 22px 22px, 100% 6px, 8px 100%;
+  background-position: 0 0, 6px 8px, 0 0, 0 0;
+  opacity: 0.28;
+  mix-blend-mode: multiply;
   pointer-events: none;
   z-index: 0;
 }
@@ -48,7 +52,11 @@ body > * {
 }
 
 .site-header {
-  padding: 24px 0;
+  padding: 18px 0;
+  background: rgba(255, 255, 255, 0.72);
+  border-bottom: 1px solid rgba(43, 43, 43, 0.08);
+  box-shadow: 0 6px 18px rgba(43, 43, 43, 0.06);
+  backdrop-filter: blur(8px);
 }
 
 .nav {
@@ -89,10 +97,11 @@ body > * {
 }
 
 .hero-text h1 {
-  font-family: "Caveat", cursive;
+  font-family: "Inter", sans-serif;
   font-size: clamp(42px, 6vw, 72px);
   line-height: 1.05;
   margin: 16px 0 20px;
+  font-weight: 600;
 }
 
 .eyebrow {
@@ -208,9 +217,10 @@ body > * {
 }
 
 .section h2 {
-  font-family: "Caveat", cursive;
+  font-family: "Inter", sans-serif;
   font-size: clamp(32px, 4.5vw, 48px);
   margin-bottom: 18px;
+  font-weight: 600;
 }
 
 .feature-grid {
@@ -227,9 +237,10 @@ body > * {
 }
 
 .feature h3 {
-  font-family: "Caveat", cursive;
+  font-family: "Inter", sans-serif;
   font-size: 26px;
   margin-bottom: 10px;
+  font-weight: 600;
 }
 
 .feature p,
@@ -263,9 +274,10 @@ body > * {
 }
 
 .step span {
-  font-family: "Caveat", cursive;
+  font-family: "Inter", sans-serif;
   font-size: 32px;
   color: var(--accent);
+  font-weight: 600;
 }
 
 .cta {
@@ -278,6 +290,8 @@ body > * {
 
 .site-footer {
   padding: 30px 0 40px;
+  background: rgba(255, 255, 255, 0.55);
+  border-top: 1px solid rgba(43, 43, 43, 0.1);
 }
 
 .footer-content {
